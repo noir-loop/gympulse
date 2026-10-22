@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --color-bg: #f8f7f4;
+  --color-ink: #1a1a1a;
+  --color-accent: #5c62d6;
+  --color-muted: #8a8a8a;
+  --color-border: #e6e4df;
+}
+
+:root {
+  --bg: #f8f7f4;
+  --ink: #1a1a1a;
+  --accent: #5c62d6;
+  --muted: #8a8a8a;
+  --border: #e6e4df;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Geist Mono', monospace;
+  }
+}
+
+/* Variation 3 Specific Component Classes */
+.brand-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #5c62d6;
+  letter-spacing: -0.02em;
+}
+
+.content-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .content-title {
+    font-size: 2.5rem;
+  }
+}
+
+.nav-label-caps {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8a8a8a;
+  font-weight: 600;
+}
+
+.btn-editorial-primary {
+  background: #5c62d6;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  border: 1px solid #5c62d6;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-editorial-primary:hover {
+  background: #4a50c7;
+  border-color: #4a50c7;
+  transform: translateY(-1px);
+}
+
+.btn-editorial-outline {
+  background: transparent;
+  color: #1a1a1a;
+  border: 1px solid #e6e4df;
+  padding: 10px 18px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-editorial-outline:hover {
+  background: #ffffff;
+  border-color: #5c62d6;
+  color: #5c62d6;
+  transform: translateY(-1px);
+}
+
+.card-editorial {
+  background: #ffffff;
+  border: 1px solid #e6e4df;
+  border-radius: 4px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-editorial:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Status tags matching Variation 3 */
+.status-tag {
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.tag-active {
+  background: #e7f7f0;
+  color: #15803d;
+}
+
+.tag-expired {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.tag-warning {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+/* Table styling with separate card rows */
+.table-editorial {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table-editorial th {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8a8a8a;
+  padding: 0 20px 8px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.row-editorial {
+  background: #ffffff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.row-editorial:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+.row-editorial td {
+  padding: 18px 20px;
+  border-top: 1px solid #e6e4df;
+  border-bottom: 1px solid #e6e4df;
+}
+
+.row-editorial td:first-child {
+  border-left: 1px solid #e6e4df;
+  border-radius: 4px 0 0 4px;
+}
+
+.row-editorial td:last-child {
+  border-right: 1px solid #e6e4df;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Modal styling matching Variation 3 */
+.modal-editorial-wrap {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-editorial-body {
+  background: #f8f7f4;
+  border: 1px solid #e6e4df;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f7f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #e6e4df;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a8a8a;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "GymPulse",
+  "description": "Multi-tenant gym management SaaS platform for independent gyms in India",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
